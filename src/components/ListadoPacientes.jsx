@@ -3,7 +3,7 @@ import Paciente from "./Paciente"
 const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
 
     return (
-        <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
+        <div className="md:w-1/2 lg:w-3/5 ">
             
             {pacientes && pacientes.length ? (
                 <>
@@ -13,6 +13,8 @@ const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
                         <span className="text-indigo-600 font-bold">Pacientes y citas</span>
                     </p>
 
+                    <div className="md:h-screen overflow-y-scroll">
+
                     {pacientes.map(paciente => (
                         <Paciente
                             key = { paciente.id } 
@@ -21,6 +23,7 @@ const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
                             eliminarPaciente = { eliminarPaciente }
                         />
                     ))}
+                    </div >
                 </>
             ) : (
                 <>
